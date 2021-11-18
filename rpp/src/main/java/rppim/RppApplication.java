@@ -15,14 +15,14 @@ public class RppApplication {
 		SpringApplication.run(RppApplication.class, args);
 	}
 
-	@Bean  //ovom anotacijom smo zadali da se kreira bean za commandLineRunner i da se ova metoda pokrene prilikom pokretanja aplikacije
-	public CommandLineRunner commandLineRunner(ApplicationContext ctx) { //ova metoda ce ispistati tekst od dole
+	@Bean
+	public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
 		return args ->{
-			System.out.println("Beans provided by Spring Boot:"); //ispisuje ovo
-			String[] beanNames = ctx.getBeanDefinitionNames(); //ova metoda vraca sve beanove i smesta ih u niz stingova
-			Arrays.sort(beanNames); //pozivamo sort iz klase arrays da sortiramo ih po abecedi
-			for(String beanName: beanNames) { //sa petljom for prolazimo kroz niz
-				System.out.println(beanName); //ispisujemo ovaj niz
+			System.out.println("Beans provided by Spring Boot:");
+			String[] beanNames = ctx.getBeanDefinitionNames();
+			Arrays.sort(beanNames);
+			for(String beanName: beanNames) {
+				System.out.println(beanName);
 			}
 		};
 	}
