@@ -25,13 +25,13 @@ import rppim.reps.TimRepository;
 public class IgracRestController {
 
 	@Autowired
-	IgracRepository igracRepository;		//povezuje sa Repository-em
+	IgracRepository igracRepository;		
 	
 	@Autowired
-	TimRepository timRepository;			//povezuje me sa timRepository
+	TimRepository timRepository;			
 	
 	@Autowired
-	private JdbcTemplate jdbcTemplate;			//da bi primenili -100 za brisanje/delete
+	private JdbcTemplate jdbcTemplate;			
 	
 	@CrossOrigin
 	@ApiOperation(value = "Returns a collection with all Igrac from database.")
