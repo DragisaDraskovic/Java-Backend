@@ -12,15 +12,15 @@ import java.util.Date;
  * The persistent class for the igrac database table.
  * 
  */
-@Entity			//ova klasa mora imati variable instanci ID
+@Entity			
 @NamedQuery(name="Igrac.findAll", query="SELECT i FROM Igrac i")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Igrac implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id			//predstavlja varijablu instance koja mapira primarni kljuc u bazi podataka
-	@SequenceGenerator(name="IGRAC_ID_GENERATOR", sequenceName="IGRAC_SEQ", allocationSize=1) //govori kako se kreira taj id, kako se kreira generator sequence
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="IGRAC_ID_GENERATOR") //automacki se vredenosti generisu, neophodan parametar je generator sequenca
+	@Id			
+	@SequenceGenerator(name="IGRAC_ID_GENERATOR", sequenceName="IGRAC_SEQ", allocationSize=1) 
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="IGRAC_ID_GENERATOR") 
 	private Integer id;
 
 	@Column(name="broj_reg")
@@ -33,10 +33,7 @@ public class Igrac implements Serializable {
 	private String ime;
 
 	private String prezime;
-	/* anotacija ManyToOne znaci da se moze mapirati od vise ka jednoj
-	 * JoinColumn navodi preko koje se kolone spaja, u ovom slucaju preko kolone nacionalnost, a u primeru preko kolone artikl
-	 * 
-	 */
+
 	//bi-directional many-to-one association to Nacionalnost
 	@ManyToOne
 	@JoinColumn(name="nacionalnost")
