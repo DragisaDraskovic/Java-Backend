@@ -14,8 +14,8 @@ public class HelloRestController {
 	
 	@RequestMapping("zbir")
 	public String zbir() {
-		long x = Math.round(Math.random()*10);   //Math.random daje random brojeve 0.0 do 1.0 pa ga zato mnozimo 
-		long y = Math.round(Math.random()*10);	 // sa 10 da bi dobili broj o 0 do 10
+		long x = Math.round(Math.random()*10);   
+		long y = Math.round(Math.random()*10);	 
 		return x+" + "+y+" = "+(x+y);
 	}
 }
