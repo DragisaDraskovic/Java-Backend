@@ -55,7 +55,7 @@ public class NacionalnostRestController {
 	
 	@CrossOrigin
 	@ApiOperation(value = "Add instance of Nacionalnost to database.")
-	@PostMapping("nacionalnost")	//post je za kreiranje
+	@PostMapping("nacionalnost")
 	public ResponseEntity<HttpStatus> addNacionalnost(@RequestBody Nacionalnost nacionalnost) {
 		nacionalnostRepository.save(nacionalnost);
 		return new ResponseEntity<HttpStatus>(HttpStatus.CREATED);
