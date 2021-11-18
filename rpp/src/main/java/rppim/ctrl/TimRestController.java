@@ -25,10 +25,10 @@ import rppim.reps.TimRepository;
 public class TimRestController {
 
 		@Autowired
-		private TimRepository timRepository;		//da bi bili povezani sa Reoisitory-jem
+		private TimRepository timRepository;		
 		
 		@Autowired
-		private JdbcTemplate jdbcTemplate;			//da bi bili povezani sa jdbcTemplate, -100 u deleteu
+		private JdbcTemplate jdbcTemplate;			
 		
 		@CrossOrigin
 		@ApiOperation(value = "Returns collection of all Tim from database.")
