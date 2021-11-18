@@ -27,19 +27,15 @@ public class Tim implements Serializable {
 
 	private String naziv;
 
-	//@Temporal je zakomentarisan zato sto on nije potreban za ovu verziju Jave vec za predhodne!
+	
 	//@Temporal(TemporalType.DATE)
 	private Date osnovan;
 
 	private String sediste;
 
-	/*
-	 * bi direkciono mapiranje nam daje mogucnost npr. da prilikom get metode za tim on izbaci i ligu u kojem je taj tim. Ne samo id lige vec sve podatke
-	 * iz baze o toj ligi!
-	 */
 	
 	//bi-directional many-to-one association to Igrac
-	@OneToMany(mappedBy="tim", cascade = {CascadeType.ALL}) 		//ova linija koda je zato sto kada obrisemo tim moramo obrisati igrace da ih ne cuvamo bzvz
+	@OneToMany(mappedBy="tim", cascade = {CascadeType.ALL}) 		
 	@JsonIgnore
 	private List<Igrac> igracs;
 
